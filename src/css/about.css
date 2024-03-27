@@ -1,0 +1,96 @@
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    max-height: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-image: url("../../assets/images/rainydays-jackets4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+  
+.container .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    text-align: left;
+    width: 100vw;
+    height: 50vh;
+    padding: 5%;
+}  
+  
+.container h1 {
+    font-size: 10vmin;
+    font-weight: 900;
+    padding: 0;
+}
+
+.container h2 {
+    font-size: 3vmin;
+    font-style: italic;
+    font-weight: 300;
+    margin-top: 1%;
+}
+
+.section-about {
+    padding-top: 4%;
+    padding-bottom: 4%;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+  }
+  
+.section-about .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+  
+.section-about .column {
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  
+.section-about .row .column img {
+    width: 100%;
+  }
+
+.section-about .text {
+    padding: 10%;
+  }
+  
+.section-about h2 {
+    font-size: 2.6vmax;
+    color: #000000;
+    padding-bottom: 10%;
+  }
+
+  /* Hide element on Tablet/Phone */ 
+
+  @media only screen and (max-width:850px) {  
+
+    .container {
+        max-height: 600px;
+    }
+
+    .container .content {
+        height: 50%;
+    }  
+
+    .section-about .column {
+        width: 100%;
+        flex-direction: column;
+    }
+}
