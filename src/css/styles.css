@@ -97,6 +97,7 @@ header {
 .menu-links {
   display: flex;
   align-items: center;
+  width: 100%;
   background-color: #E9E9E9;
   border-radius: 30px;
   padding-top: 10px;
