@@ -1,8 +1,8 @@
 /* Use import to split up your CSS into manageable chunks */
-@import url("./_reset.css");
+@import url("./reset.css");
 /* Files that are only needed to be imported are called partials */
 /* These are marked with an underscore: */
-@import url("./_variables.css");
+@import url("./variables.css");
 /* Feel free to add as many of these imports as you need */
 @import url("./jackets.css");
 @import url("./interest.css");
@@ -32,7 +32,7 @@
   }
 }
 
-/* Desktop Section */ 
+/* Desktop Section */
 
 body {
   color: var(--color-primary);
@@ -65,7 +65,7 @@ p {
   text-align: left;
 }
 
-/* Header Section */ 
+/* Header Section */
 
 header {
   width: 100%;
@@ -174,7 +174,7 @@ header {
   cursor: pointer;
 }
 
-/* Main Section */ 
+/* Main Section */
 
 .block {
   margin: 0;
@@ -236,7 +236,7 @@ hr.grey {
   border: 0.5px solid #D1D3D4;
 }
 
-/* Footer Section */ 
+/* Footer Section */
 
 .section-customercare {
   margin: 0;
@@ -282,11 +282,11 @@ hr.grey {
   width: 20%;
 }
 
-.section-customercare img { 
-  width: 60px; 
-  height: auto; 
+.section-customercare img {
+  width: 60px;
+  height: auto;
   padding-top: 10px;
- } 
+ }
 
 .section-customercare .customercare-headline {
   font-size: 18px;
@@ -403,10 +403,10 @@ footer {
   padding-top: 20px;
 }
 
-.footer-bottom img { 
-  width: 80px; 
-  height: auto; 
- } 
+.footer-bottom img {
+  width: 80px;
+  height: auto;
+ }
 
 .footer-bottom p {
   color: #ffffff;
@@ -414,11 +414,11 @@ footer {
   text-align: left;
 }
 
-/* Hide element on Tablet/Phone */ 
+/* Hide element on Tablet/Phone */
 
 @media only screen and (max-width:850px) {
 
-/* Header Section */ 
+/* Header Section */
 
   header {
     height: 140px;
@@ -470,7 +470,7 @@ footer {
 
   .menu-cart {
     display: none;
-  }   
+  }
 
   .mobile-menu-cart {
     position: absolute;
@@ -480,7 +480,7 @@ footer {
     width: 40px;
     cursor: pointer;
   }
- 
+
   .mobile-menu {
     margin-top: 340px;
     background: #E9E9E9;
@@ -499,7 +499,7 @@ footer {
     border-radius: 20px;
   }
 
-/* Main Section */ 
+/* Main Section */
 
   .Breadcrumbs {
     background-color: #284A66;
@@ -509,12 +509,12 @@ footer {
   ul.Breadcrumbs li+li:before {
     color:#E9E9E9;
   }
-  
+
   ul.Breadcrumbs li a {
     color: #E9E9E9;
   }
 
-/* Footer Section */ 
+/* Footer Section */
 
   .section-customercare .column {
     width: 100%;
@@ -558,7 +558,7 @@ footer {
     justify-content: center;
     padding-bottom: 20px;
   }
-  
+
   .footer-links .column {
     width: 100%;
     flex-direction: column;
@@ -589,12 +589,12 @@ footer {
     width: 100%;
     padding-top: 10px;
   }
-  
+
   .footer-bottom .images {
     width: 100%;
     text-align: center;
   }
-  
+
   .footer-bottom p {
     padding-bottom: 40px;
     text-align: center;
