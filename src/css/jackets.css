@@ -1,0 +1,130 @@
+  .section-jackets {
+    margin: 0;
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 5%;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .section-jackets .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .section-jackets .column {
+    width: 25%;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+  
+  .section-jackets .row .column img {
+    width: 100%;
+  }
+  
+  .section-jackets p {
+    font-size: 1.9vmin;
+    color: #585858;
+    text-align: left;
+  }
+
+  .section-jackets a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .section-jackets h2 {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  .section-jackets h3 {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+  
+  .h2-title {
+    text-align: left;
+    width: 100%;
+    font-size: 2.5vmax;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 2%;
+  }
+  
+  .section-jackets .img-wrapper {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #E9E9E9;
+  }
+  
+  .section-jackets .img-wrapper:hover {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  
+  .section-jackets .img-wrapper img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .img-wrapper .content {
+    position: absolute;
+    inset: 0;
+    font-size: 18px;
+    color: #ffffff;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    bottom: 0;
+    top: auto;
+    cursor: pointer;
+  }
+  
+  .img-wrapper img,
+  .img-wrapper .content {
+    transition: 350ms ease-in-out;
+  }
+  
+  .img-wrapper .content.fade {
+    opacity: 0;
+  }
+  
+  .img-wrapper:hover .content.fade {
+    opacity: 1;
+  }
+
+  /* Hide element on Tablet/Phone */ 
+  @media only screen and (max-width:850px) {
+
+    .section-jackets .column {
+        width: 50%;
+        flex-direction: column;
+      }
+    
+      .section-jackets p {
+        font-size: 16px;
+      }
+      
+      .section-jackets h3 {
+        font-size: 18px;
+      }
+}
