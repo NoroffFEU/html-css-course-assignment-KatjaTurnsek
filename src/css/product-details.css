@@ -186,7 +186,7 @@
     font-weight: 200;
   }
 
-.product-form [type="radio"] {
+.colornav [type="radio"] {
     border: 0;
     height: 1px; margin: -1px;
     padding: 0;
@@ -195,7 +195,7 @@
     display: none;
   }
 
-.product-form [type="radio"] + span:before {
+.colornav [type="radio"] + span:before {
     content: '';
     display: inline-block;
     width: 30px;
@@ -208,43 +208,43 @@
     transition: 0.5s ease all;
   }
 
-.product-form input[type=radio]#Red {
+.colornav input[type=radio]#Red {
     accent-color: #DB3C24;
   }
 
-.product-form [type="radio"]#Red:checked + span:before {
+.colornav [type="radio"]#Red:checked + span:before {
     background: #DB3C24;
     box-shadow: 0 0 0 0.25em #E9E9E9;
   }
 
-.product-form input[type=radio]#Blue {
+.colornav input[type=radio]#Blue {
     accent-color: #284A66;
   }
 
-.product-form [type="radio"]#Blue:checked + span:before {
+.colornav [type="radio"]#Blue:checked + span:before {
     background: #284A66;
     box-shadow: 0 0 0 0.25em #E9E9E9;
   }
 
-.product-form input[type=radio]#Green {
+.colornav input[type=radio]#Green {
     accent-color: #7BCAB2;
   }
 
-.product-form [type="radio"]#Green:checked + span:before {
+.colornav [type="radio"]#Green:checked + span:before {
     background: #7BCAB2;
     box-shadow: 0 0 0 0.25em #E9E9E9;
   }
 
-.product-form input[type=radio]#Black {
+.colornav input[type=radio]#Black {
     accent-color: #121212;
   }
 
-.product-form [type="radio"]#Black:checked + span:before {
+.colornav [type="radio"]#Black:checked + span:before {
     background: #121212;
     box-shadow: 0 0 0 0.25em #E9E9E9;
   }
 
-.product-form input[type=radio]#auto {
+.colornav input[type=radio]#auto {
     accent-color: auto;
   }
 
