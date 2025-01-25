@@ -10,13 +10,36 @@
 @import url("./about.css");
 @import url("./contact.css");
 @import url("./product-details.css");
+@import url("./thank-you.css");
+@import url("./checkout.css");
+@import url("./loader.css");
+
+/* Normal */
 @font-face {
-  font-family: 'Roboto';
-  src: url('roboto.eot'); /* IE9 Compat Modes */
-  src: url('roboto.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('roboto.woff') format('woff'), /* Modern Browsers */
-  url('roboto.ttf')  format('truetype'), /* Safari, Android, iOS */
-  url('roboto.svg#svgFontName') format('svg'); /* Legacy iOS */
+	font-family: "Roboto Condensed";
+	font-style: normal;
+	font-weight: 400;
+	src: local('Roboto Condensed Regular'), local('RobotoCondensed-Regular'), url("RobotoCondensed-Regular.ttf") format('truetype');
+}
+@font-face {
+	font-family: "Roboto Condensed";
+	font-style: italic;
+	font-weight: 400;
+	src: local('Roboto Condensed Italic'), local('RobotoCondensed-Italic'), url("RobotoCondensed-Italic.ttf") format('truetype');
+}
+
+/* Bold */
+@font-face {
+	font-family: "Roboto Condensed";
+	font-style: normal;
+	font-weight: 700;
+	src: local('Roboto Condensed Bold'), local('RobotoCondensed-Bold'), url("RobotoCondensed-Bold.ttf") format('truetype');
+}
+@font-face {
+	font-family: "Roboto Condensed";
+	font-style: italic;
+	font-weight: 700;
+	src: local('Roboto Condensed Bold Italic'), local('RobotoCondensed-BoldItalic'), url("RobotoCondensed-BoldItalic.ttf") format('truetype');
 }
 
 /* Hide element on Desktop */
@@ -466,17 +489,28 @@ footer {
     margin: 10px;
   }
 
-  .menu-cart {
-    display: none;
-  }
-
-  .mobile-menu-cart {
+  .menu-cart a {
     position: absolute;
-    top: 7px;
+    bottom: 18px;
     right: 30px;
-    font-size: 22px;
+    font-size: 20px;
     width: 40px;
     cursor: pointer;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    z-index: 9999;
+  }
+  
+  .menu-cart a:hover {
+    color: #284A66;
+    background: none;
+    padding: 0;
+  }
+  
+  .menu-cart a:active {
+    color: #000000;
+    background: none;
   }
 
   .mobile-menu {

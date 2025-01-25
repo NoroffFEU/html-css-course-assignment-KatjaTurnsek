@@ -19,10 +19,8 @@
           <li><a href="about-raiydays.html">about us</a></li>
           <li><a href="contact-customer-service.html">contact</a></li>
         </ul>
-        <div class="menu-cart"><a href="#"><i class="fas fa-shopping-cart"></i></a></div>
-    
+        <div class="menu-cart"><a href="checkout.html"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></a></div>
         <div class="mobile-toggle-wrapper">
-        <div class="mobile-menu-cart"><a href="#"><i class="fas fa-shopping-cart"></i></a></div>
         <div class="toggle-btn"><i class="fa fa-bars"></i></div>
         </div>
       </nav>
@@ -41,6 +39,18 @@
         <h1>What jacket fits you the best?</h1>
         <p>Discover your perfect fit by browsing our selection of jackets. We have what you need, whether you're looking for warmth, style, or adaptability. What are you trying to find? These are your go-to jackets when the weather is chilly and wet. Wear them under a shell jacket for extra insulation, or wear them as a stand-alone outer layer.</p>
     </section>
+
+    <section>
+      <h2>Filter By:</h2>
+      <select id="category-filter">
+        <option value="">Category</option>
+        <option value="rain">Rain</option>
+        <option value="winter">Winter</option>
+      </select>
+    </section>
+
+    <section id="product-list"></section>
+
 
       <section class="section-jackets">
 
@@ -199,7 +209,7 @@
 
   </footer>
 
-  <script defer type="module" src="../src/js/index.mjs"></script>
+  <script defer type="module" src="../src/js/index.js"></script>
 
 </body>
 </html>

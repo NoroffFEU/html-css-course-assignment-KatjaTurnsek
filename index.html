@@ -19,17 +19,17 @@
           <li><a href="html/about-raiydays.html">about us</a></li>
           <li><a href="html/contact-customer-service.html">contact</a></li>
         </ul>
-        <div class="menu-cart"><a href="#"><i class="fas fa-shopping-cart"></i></a></div>
+        <div class="menu-cart"><a href="html/checkout.html"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></a></div>
         <div class="mobile-toggle-wrapper">
-        <div class="mobile-menu-cart"><a href="#"><i class="fas fa-shopping-cart"></i></a></div>
         <div class="toggle-btn"><i class="fa fa-bars"></i></div>
         </div>
       </nav>
     </header>
-
+    
     <main>
+      <span class="loader"></span>
       
-      <section class="ind-container">          
+      <section class="ind-container">   
         <div class="content">
             <h1><span class="var-italic">Pushing</span> the Comfort Zone</h1>
             <h2>with rainy days jackets</h2>
@@ -38,8 +38,13 @@
     </section>
 
       <div class="h2-title"><h2>Bestsellers</h2></div>
-      <section class="section-jackets">
 
+      <div id="element1"></div>
+      <div id="element2"></div>
+      <div id="element3"></div>
+
+      <section class="section-jackets">
+       
       <div class="row">
         <div class="column">
           <a href="html/zyran-parka-jacket.html">
@@ -194,7 +199,7 @@
 
   </footer>
 
-<script defer type="module" src="/src/js/index.mjs"></script>
+<script defer type="module" src="/src/js/index.js"></script>
 
 </body>
 </html>
