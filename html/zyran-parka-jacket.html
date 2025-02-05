@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../src/css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
-<body class="centered">
+<body data-page="product-page" class="centered">
   
     <header> 
       <nav class="menu">
@@ -36,92 +36,48 @@
             </ul>
         </div> 
 
-        <div id="product-details"></div>
-
-        <section class="section-product-details">
-            <div class="row">
-              <div class="column">
-                <div class="gallery">             
-                  <div class="gallery-jacket">
-                    <input type="radio" checked="checked" name="select" id="img-tab-1">
-                    <label for="img-tab-1" style="background-image: url(../assets/images/RainyDays_Jacket1.png);"></label>
-                    <img src="../assets/images/RainyDays_Jacket1.png" alt="Red color jacket">  
-                    <input type="radio" name="select" id="img-tab-2">
-                    <label for="img-tab-2" style="background-image: url(../assets/images/RainyDays_Jacket-blue.png);"></label>
-                    <img src="../assets/images/RainyDays_Jacket-blue.png" alt="Blue color jacket">
-                    <input type="radio" name="select" id="img-tab-3">
-                    <label for="img-tab-3" style="background-image: url(../assets/images/RainyDays_Jacket1-green.png);"></label>
-                    <img src="../assets/images/RainyDays_Jacket1-green.png" alt="Green color jacket">
-                    <input type="radio" name="select" id="img-tab-4">
-                    <label for="img-tab-4" style="background-image: url(../assets/images/RainyDays_Jacket1-black.png);"></label>
-                    <img src="../assets/images/RainyDays_Jacket1-black.png" alt="Black color jacket">
-                  </div>
-                </div>
-            </div>
-    
-              <div class="column">
-
-                <div class="text">
-                    <div class="wrapper">
-                        <div class="left">
-                            <h1>Zyran Parka Jacket</h1>
-                            <h2>1149kr</h2>
-                            <p>A very popular jacket with GOTE-TEX ePE fabric, avaiable in four colors.</p>
-                        </div>
-                        <div class="right">
-                            <div class="rating"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div>
-                            <p><a href="#">write a review</a></p>
-                        </div>   
-                    </div>
-                    
-                    <form class="product-form" action="#">
-                    <fieldset>
-                      <legend>COLOR</legend>
-                      <div class="colornav">
-                      <label for="Red">
-                      <input type="radio" value="Red" name="colors" id="Red" checked> <span>Red</span>
-                      </label>                       
-                      <label for="Blue">
-                      <input type="radio" value="Blue" name="colors" id="Blue"> <span>Blue</span>
-                      </label> 
-                      <label for="Green">
-                      <input type="radio" value="Green"  name="colors" id="Green"> <span>Green</span>
-                      </label>
-                      <label for="Black">
-                      <input type="radio" value="Black"  name="colors" id="Black"> <span>Black</span>
-                      </label>
-                      </div>
-                    </fieldset>
-
-                    <fieldset>
-                      <legend>SIZE</legend>
-                      <div class="sizesnav">
-                      <input type="radio" id="size-xs" name="sizes" value="size-xs" checked>
-                      <label for="size-xs">XS</label><br>
-                      <input type="radio" id="size-s" name="sizes" value="size-s">
-                      <label for="size-s">S</label><br>
-                      <input type="radio" id="size-m" name="sizes" value="size-m">
-                      <label for="size-m">M</label><br>
-                      <input type="radio" id="size-l" name="sizes" value="size-l">
-                      <label for="size-l">L</label><br>
-                      <input type="radio" id="size-xl" name="sizes" value="size-xl">
-                      <label for="size-xl">XL</label><br>
-                      </div>
-                    </fieldset>
-                    <button type="submit">Add to cart</button>
-                    </form>
-
-                    <div class="product-info">
-                    <h2>Product details</h2>
-                    <p>A popular jacket that has been redesigned with new GORE-TEX ePE fabric for the best defense against water and wind. </p>
-                    <p>The primary fabric, which is made of recycled polyester, is also PFC-free. Furthermore, zip vents make it simple to regulate your body temperature while freeriding uphill. A great outer layer for the ideal adventure day.</p>
-                    </div>
-               
-                  </div>
-               </div>
-      
+        <section id="product-page" class="section-product-details">
+          <span class="loader"></span>
+          <div class="row">
+            <div class="column">
+              <div class="gallery">
+                <div class="gallery-jacket"></div>
               </div>
-          </section>     
+            </div>
+
+            <div class="column">
+              <div class="text">
+                <div class="wrapper">
+                    <div class="left">
+                      <h1 class="product-title">Loading...</h1>
+                      <h2 class="product-price">Loading...</h2>
+                      <p class="product-description"></p>
+                    </div>
+                    <div class="right">
+                        <div class="rating"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div>
+                        <p><a href="#">write a review</a></p>
+                    </div>   
+                </div>
+                
+                <form class="product-form">
+                  <fieldset>
+                    <legend id="color-legend"></legend>
+                    <div class="colornav"></div>
+                  </fieldset>
+                  <fieldset>
+                    <legend id="size-legend"></legend>
+                    <div class="sizesnav"></div>
+                  </fieldset>
+              
+                  <button type="submit" id="addToCartButton">Add to Cart</button>
+                </form>
+
+                <div class="product-info"></div>
+
+              </div>
+            </div>
+          </div>
+        </section>
      
   </main>
 
@@ -175,10 +131,10 @@
               <p class="footerlink-headlines">Menu</p>
               <nav>
                 <ul class="footer-menu-links">
-                  <li><a href="../index.html">Home</a></li>
-                  <li><a href="shop-jackets.html">Shop</a></li>
                   <li><a href="about-raiydays.html">About</a></li>
                   <li><a href="contact-customer-service.html">Contact</a></li>
+                  <li><a href="terms.html">Terms</a></li>
+                  <li><a href="privacy-policy.html">Privacy policy</a></li>
                 </ul>
               </nav>
             </div>
@@ -209,7 +165,7 @@
 
   </footer>
 
-  <script defer type="module" src="../src/js/index.js"></script>
+  <script type="module" src="../src/js/index.js"></script>
 
 </body>
 </html>

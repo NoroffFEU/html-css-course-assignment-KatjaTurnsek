@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../src/css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
-<body class="centered">
+<body data-page="product-list" class="centered">
   
     <header> 
       <nav class="menu">
@@ -40,87 +40,31 @@
         <p>Discover your perfect fit by browsing our selection of jackets. We have what you need, whether you're looking for warmth, style, or adaptability. What are you trying to find? These are your go-to jackets when the weather is chilly and wet. Wear them under a shell jacket for extra insulation, or wear them as a stand-alone outer layer.</p>
     </section>
 
-    <section>
-      <h2>Filter By:</h2>
-      <select id="category-filter">
-        <option value="">Category</option>
-        <option value="rain">Rain</option>
-        <option value="winter">Winter</option>
-      </select>
+    <section class="filter-section" id="filter-section">
+      <h2 id="filterTitle"></h2>
+      <select id="category-filter"></select>
     </section>
-
-    <section id="product-list"></section>
-
-
-      <section class="section-jackets">
-
+      
+    <div id="product-list" class="section-jackets">
+      <span class="loader"></span>
       <div class="row">
-        <div class="column">
-          <a href="../html/zyran-parka-jacket.html">
-            <div class="img-wrapper">
-            <img src="../assets/images/RainyDays_Jacket1.png" alt="Red Zyran parka jacket">
-            <div class="content fade">Product details</div>
-          </div>
-          </a> 
-          <h2>Zyran parka jacket</h2>
-          <p>1149kr</p>
-        </div>
-        <div class="column">
-          <div class="img-wrapper">
-            <img src="../assets/images/RainyDays_Jacket2.png" alt="Grey thin Ociel rain jacket">
-            <div class="content fade">Sold out</div>
-            </div>
-          <h2>Ociel rain jacket</h2>
-          <p>1200kr</p>
-        </div>
-        <div class="column">
-          <div class="img-wrapper">
-            <img src="../assets/images/RainyDays_Jacket3.png" alt="Red Donner jacket">
-            <div class="content fade">Sold out</div>
-            </div>
-          <h2>Donner jacket</h2>
-          <p>949kr</p>
-        </div>
-        <div class="column">
-          <div class="img-wrapper">
-            <img src="../assets/images/RainyDays_Jacket6.png" alt="Black and Grey Zaphyr jacket">
-            <div class="content fade">Sold out</div>
-            </div>
-          <h2>Zaphyr jacket</h2>
-          <p>1569kr</p>
-        </div>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="column">
-            <div class="img-wrapper">
-            <img src="../assets/images/RainyDays_Jacket4.png" alt="black starling jacket">
-            <div class="content fade">Sold out</div>
-            </div>       
-            <h2>Starling jacket</h2>
-            <p>1149kr</p>
-          </div>
-          <div class="column">
-            <div class="img-wrapper">
-            <img src="../assets/images/RainyDays_Jacket5.png" alt="Grey Mellan rain jacket">
-            <div class="content fade">Sold out</div>
-            </div>       
-            <h2>Mellan rain jacket</h2>
-            <p>1200kr</p>
-          </div>
-          <div class="column">
-            <div class="img-wrapper">
-            <img src="../assets/images/RainyDays_Jacket7.png" alt="Sol wool jacket">
-            <div class="content fade">Sold out</div>
-            </div>       
-            <h2>Sol wool jacket</h2>
-            <p>949kr</p>
-          </div>
-          <div class="column"></div>
+  <template id="product-card-template">
+    <div class="column">
+      <div class="img-wrapper">
+        <a href="#" class="product-link">
+          <img src="" alt="" class="product-image">
+        </a>
+        <span class="sale-badge">Sale</span>
+        <div class="content fade">View More</div>
       </div>
-
-      </section>
-
+      <h3 class="product-title"></h3>
+      <div class="product-price"></div>
+    </div>
+  </template>
+  
   </main>
 
   <footer>
@@ -175,10 +119,10 @@
               <p class="footerlink-headlines">Menu</p>
               <nav>
                 <ul class="footer-menu-links">
-                  <li><a href="../index.html">Home</a></li>
-                  <li><a href="shop-jackets.html">Shop</a></li>
                   <li><a href="about-raiydays.html">About</a></li>
                   <li><a href="contact-customer-service.html">Contact</a></li>
+                  <li><a href="terms.html">Terms</a></li>
+                  <li><a href="privacy-policy.html">Privacy policy</a></li>
                 </ul>
               </nav>
             </div>
@@ -209,7 +153,7 @@
 
   </footer>
 
-  <script defer type="module" src="../src/js/index.js"></script>
+  <script type="module" src="../src/js/index.js"></script>
 
 </body>
 </html>

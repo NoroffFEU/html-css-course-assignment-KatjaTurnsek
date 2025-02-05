@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Rainy days - Send us a message or call</title>
-  <meta name="description" content="We are here to help, lets get this conversation started! Rainy days customer service will get back to you within 1-2 business days.">
+  <title>Starling Jacket | Sleek & Versatile Black Jacket for All Seasons</title>
+  <meta name="description" content="Shop the Starling Jacket, a lightweight and stylish black jacket for men and women. Perfect for summer and year-round use. Available in XS to XXL.">
   <link rel="stylesheet" href="../src/css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
-<body class="centered">
+<body data-page="product-page" class="centered">
   
     <header> 
       <nav class="menu">
         <div class="logo"><img src="../assets/images/rainydays-logo.png" alt="logotype RainyDays Jackets"></div>
         <ul class="menu-links">
           <li><a href="../index.html">home</a></li>
-          <li><a href="shop-jackets.html">shop</a></li>
+          <li class="active"><a href="shop-jackets.html">shop</a></li>
           <li><a href="about-raiydays.html">about us</a></li>
-          <li class="active"><a href="contact-customer-service.html">contact</a></li>
+          <li><a href="contact-customer-service.html">contact</a></li>
         </ul>
         <div class="menu-cart"><a href="checkout.html"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></a></div>
         <div class="mobile-toggle-wrapper">
@@ -31,98 +31,60 @@
         <div class="Breadcrumbs">
             <ul class="Breadcrumbs">
             <li><a href="../index.html">Home</a></li>
-            <li>Contact</li>
+            <li><a href="shop-jackets.html">Shop</a></li>
+            <li>Starling jacket</li>
             </ul>
         </div> 
 
-    <section class="block">
-        <h1>Send us a message or call</h1>
-        <p>We are here to help, lets get this conversation started! We will get back to you within 1-2 business days. </p>
-    </section>
-
-    <section class="section-contact">
-      <span class="loader"></span>
-        <div class="row">
-          <div class="column">
-            <div class="contact-form">
-                <h2>Form</h2>
-            <form action="#">  
-              <div class="contact-details-person">
-                <div class="contact-detail">
-                <label for="name">First Name:</label>
-                <input type="text" id="name">
-                </div>
-                <div class="contact-detail">
-                <label for="last-name">Last Name:</label>
-                <input type="text" id="last-name">
+        <section id="product-page" class="section-product-details">
+          <span class="loader"></span>
+          <div class="row">
+            <div class="column">
+              <div class="gallery">
+                <div class="gallery-jacket"></div>
               </div>
-              </div>    
-                  <label for="email-address">Email Address:</label>
-                  <input type="email" id="email-address">
-                  <label for="message">Message:</label>
-                  <textarea id="message" rows="4" cols="50"></textarea>
-                   <button type="submit">Send message</button>
-              </form>  
-            </div>     
-        </div>
-
-          <div class="column">  
-            <hr class="mobile">
-            <div class="contact-alter">
-          
-                <div class="row">
-                  <div class="column">
-                    <div class="wrapper">
-                       <div class="images">
-                        <img src="../assets/images/ico-phone.png" alt="Icon phone">
-                       </div>
-                      <div class="text">
-                      <h3>Call</h3>
-                      <p>+46 (0)7854332</p>
-                      </div>
-                    </div>
-                  </div>
-          
-                 <div class="column">
-                  <div class="wrapper">
-                     <div class="images">
-                      <img src="../assets/images/ico-envelope.png" alt="Icon Envelope">
-                     </div>
-                    <div class="text">
-                    <h3>Email</h3>
-                    <p><a href="#">customer@rainydays.com</a></p>
-                    </div>
-                  </div>
-               </div>
-          
-               <div class="column">
-                <div class="wrapper">
-                   <div class="images">
-                    <img src="../assets/images/ico-location.png" alt="Icon location">
-                   </div>
-                  <div class="text">
-                    <h3>Mailing address</h3>
-                    <p>Rainydays AB
-                    Streetoftheadventurous 11555 44
-                    FAR FAR AWAY</p>
-                  </div>
-                </div>
-              </div>
-             </div>
             </div>
 
+            <div class="column">
+              <div class="text">
+                <div class="wrapper">
+                    <div class="left">
+                      <h1 class="product-title">Loading...</h1>
+                      <h2 class="product-price">Loading...</h2>
+                      <p class="product-description"></p>
+                    </div>
+                    <div class="right">
+                        <div class="rating"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div>
+                        <p><a href="#">write a review</a></p>
+                    </div>   
+                </div>
+                
+                <form class="product-form">
+                  <fieldset>
+                    <legend id="color-legend"></legend>
+                    <div class="colornav"></div>
+                  </fieldset>
+                  <fieldset>
+                    <legend id="size-legend"></legend>
+                    <div class="sizesnav"></div>
+                  </fieldset>
+              
+                  <button type="submit" id="addToCartButton">Add to Cart</button>
+                </form>
+
+                <div class="product-info"></div>
+
+              </div>
+            </div>
           </div>
-        </div>
-
-      </section>     
-
+        </section>
+     
   </main>
 
   <footer>
 
     <div class="section-customercare">
       <hr class="grey">
-
       <div class="row">
         <div class="column">
           <div class="wrapper">
@@ -136,7 +98,7 @@
           </div>
         </div>
 
-       <div class="column">
+      <div class="column">
         <div class="wrapper">
            <div class="images">
             <img src="../assets/images/ico-delivery.png" alt="thumbs up">
@@ -148,8 +110,8 @@
         </div>
      </div>
 
-     <div class="column">
-      <div class="wrapper">
+      <div class="column">
+        <div class="wrapper">
          <div class="images">
           <img src="../assets/images/ico-returns.png" alt="two arrows in a cricle">
          </div>
@@ -160,7 +122,6 @@
       </div>
     </div>
    </div>
-
       <hr class="grey">
   </div>
 
@@ -205,6 +166,8 @@
   </footer>
 
   <script type="module" src="../src/js/index.js"></script>
+
+
 
 </body>
 </html>
