@@ -1,8 +1,10 @@
-// imported JS
-import { addToCart } from "./cart.js";
-import { fetchFromApi } from "./api.js";
+// Imported JS
+import { renderPosts } from "./products.js";
+import { updateCartCount } from "./checkout.js";
+import { API_BASE_URL, fetchFromApi } from "./api.js";
 import loader from "./loader.js";
 
+// API Call
 async function getPosts() {
   const postsEndpoint = `${API_BASE_URL}/rainy-days`;
   try {
@@ -13,21 +15,7 @@ async function getPosts() {
   }
 }
 
-function renderPosts(posts) {
-  const element1 = document.getElementById("element1");
-  const element2 = document.getElementById("element2");
-  const element3 = document.getElementById("element3");
-
-  if (posts.length >= 3) {
-    element1.textContent = posts[0];
-    element2.textContent = posts[1];
-    element3.textContent = posts[2];
-  } else {
-    throw new Error("Not enough posts to render.");
-  }
-}
-
-// Loader function
+// App Function
 async function app() {
   loader.show();
   try {
@@ -42,10 +30,29 @@ async function app() {
 
 app();
 
-// Toggle button Mobile
-const menuBtn = document.querySelector(".toggle-btn");
-const navLinks = document.querySelector(".menu-links");
+// Menu
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.querySelector(".toggle-btn");
+  const navLinks = document.querySelector(".menu-links");
+  const menuCart = document.querySelector(".menu-cart");
 
-menuBtn.addEventListener("click", () => {
-  navLinks.classList.toggle("mobile-menu");
+  const page = document.body.getAttribute("data-page");
+  const hideOnPages = ["thank-you", "checkout"];
+
+  if (hideOnPages.includes(page)) {
+    if (navLinks) {
+      navLinks.style.display = "none";
+    }
+    if (menuCart) {
+      menuCart.style.display = "none";
+    }
+  } else {
+    if (menuBtn && navLinks) {
+      menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("mobile-menu");
+      });
+    } else {
+      console.error("Menu button or navigation links not found.");
+    }
+  }
 });
