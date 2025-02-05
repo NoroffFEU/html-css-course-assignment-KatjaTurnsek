@@ -10,16 +10,16 @@
   .section-jackets .row {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
+    justify-content: space-evenly;
   }
   
   .section-jackets .column {
-    width: 25%;
-    flex-direction: column;
-    align-items: center;
+    width: 23%;
     padding: 15px;
+    box-sizing: border-box;
   }
   
   .section-jackets .row .column img {
@@ -27,7 +27,7 @@
   }
   
   .section-jackets p {
-    font-size: 1.9vmin;
+    font-size: 18px;
     color: #585858;
     text-align: left;
   }
@@ -111,6 +111,75 @@
   .img-wrapper:hover .content.fade {
     opacity: 1;
   }
+
+.filter-section {
+  width: 90%; 
+  margin: 0 auto;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #e2e2e2; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter-section h2 {
+  margin-bottom: 30px;
+}
+
+#category-filter {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1rem; 
+  background-color: #fff; 
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  appearance: none; 
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  color: #333; 
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+#category-filter:focus {
+  border-color: #494949;
+  outline: none;
+}
+
+#category-filter:hover {
+  border-color: #284A66; 
+}
+
+.sale-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff4747;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.product-price {
+  text-align: left;;
+}
+
+.old-price {
+  font-size: 18px;
+  color: #585858;
+  text-decoration: line-through;
+  margin-right: 10px;
+}
+
+.new-price {
+  font-size: 18px;
+  color: #ff4747; 
+  font-weight: bold;
+}
 
   /* Hide element on Tablet/Phone */ 
   @media only screen and (max-width:850px) {
