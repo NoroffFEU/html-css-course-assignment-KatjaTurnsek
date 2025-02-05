@@ -24,7 +24,7 @@ export const products = [
     onSale: true,
     tags: ["jacket", "winter", "warm"],
     baseColor: "Red",
-    link: "/html/zyran-parka-jacket.html?id=product-1",
+    link: "html/zyran-parka-jacket.html?id=product-1",
   },
   {
     id: "product-2",
@@ -216,7 +216,7 @@ function createPriceSpan(className, price) {
 
 export function generateProductCardContent(product, isHomepage) {
   return {
-    linkPath: product.link,
+    linkPath: isHomepage ? `/${product.link}` : `../${product.link}`,
     imagePath: isHomepage ? product.image : `../${product.image}`,
     title: product.title,
     price: product.price,
