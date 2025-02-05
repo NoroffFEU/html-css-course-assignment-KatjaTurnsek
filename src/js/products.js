@@ -218,7 +218,7 @@ export function generateProductCardContent(product) {
   const isHomepage = window.location.pathname === "/index.html";
 
   return {
-    linkPath: isHomepage ? `html/${product.link}` : `../html/${product.link}`,
+    linkPath: isHomepage ? `/${product.link}` : `../html/${product.link}`,
     imagePath: isHomepage ? product.image : `../${product.image}`,
     title: product.title,
     price: product.price,
