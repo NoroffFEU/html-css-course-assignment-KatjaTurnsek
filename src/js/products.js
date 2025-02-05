@@ -214,7 +214,10 @@ function createPriceSpan(className, price) {
   return span;
 }
 
-export function generateProductCardContent(product, isHomepage) {
+export function generateProductCardContent(product) {
+
+const isHomepage = window.location.pathname === "/index.html";
+  
   return {
     linkPath: isHomepage ? `html/${product.link}` : `../html/${product.link}`,
     imagePath: isHomepage ? product.image : `../${product.image}`,
