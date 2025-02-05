@@ -215,9 +215,11 @@ function createPriceSpan(className, price) {
 }
 
 export function generateProductCardContent(product, isHomepage) {
+  const basePath = "html-css-course-assignment-KatjaTurnsek";
+
   return {
-    linkPath: isHomepage ? `/${product.link}` : `../${product.link}`,
-    imagePath: isHomepage ? product.image : `../${product.image}`,
+    linkPath: isHomepage ? `/${basePath}/${product.link}` : `../${basePath}/${product.link}`,
+    imagePath: isHomepage ? `/${basePath}/${product.image}` : `../${basePath}/${product.image}`,
     title: product.title,
     price: product.price,
     discountedPrice: product.discountedPrice,
