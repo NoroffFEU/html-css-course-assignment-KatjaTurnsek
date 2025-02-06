@@ -5,7 +5,7 @@ const SHIPPING_FEE = 50;
 
 export function getCart() {
   return JSON.parse(localStorage.getItem("cart")) || [];
-};
+}
 
 export async function saveCart(cart) {
   try {
@@ -13,8 +13,8 @@ export async function saveCart(cart) {
   } catch (error) {
     alert("There was an error saving your cart. Please try again.");
     console.error("Error saving cart:", error);
-  };
-};
+  }
+}
 
 export async function addToCart(productId, selectedColor, selectedSize) {
   let cart = getCart();
@@ -23,7 +23,7 @@ export async function addToCart(productId, selectedColor, selectedSize) {
   if (!product) {
     alert("Product not found!");
     return;
-  };
+  }
 
   let price = parseFloat(product.discountedPrice || product.price).toFixed(2);
 
@@ -46,12 +46,12 @@ export async function addToCart(productId, selectedColor, selectedSize) {
       price: price,
       quantity: 1,
     });
-  },
+  }
 
   await saveCart(cart);
   updateCartCount();
   updateTotalAmount();
-};
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   updateCheckoutLabels();
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!selectedColor || !selectedSize) {
           alert("Please select both color and size!");
           return;
-        };
+        }
 
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get("id");
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!productId) {
           alert("Product ID is missing in the URL.");
           return;
-        };
+        }
 
         addToCart(productId, selectedColor, selectedSize);
 
@@ -95,8 +95,8 @@ document.addEventListener("DOMContentLoaded", () => {
           addToCartButton.textContent = "Add to Cart";
         }, 3000);
       });
-    };
-  };
+    }
+  }
 });
 
 function updateCheckoutLabels() {
@@ -109,7 +109,7 @@ function updateCheckoutLabels() {
   if (shippingLabel) shippingLabel.textContent = "Shipping:";
   if (vatLabel) vatLabel.textContent = "VAT:";
   if (totalLabel) totalLabel.textContent = "Total Amount:";
-};
+}
 
 async function loadCheckoutPage() {
   const checkoutContainer = document.getElementById("checkout-container");
@@ -123,7 +123,7 @@ async function loadCheckoutPage() {
     checkoutContainer.innerHTML = "<p>Your cart is empty.</p>";
     checkoutDetails.style.visibility = "hidden";
     return;
-  };
+  }
 
   checkoutDetails.style.visibility = "visible";
 
@@ -136,7 +136,7 @@ async function loadCheckoutPage() {
     if (!product) {
       console.warn(`Product with ID ${item.id} not found`);
       return;
-    };
+    }
 
     let price = parseFloat(product.discountedPrice || product.price);
 
@@ -172,7 +172,7 @@ async function loadCheckoutPage() {
   });
 
   updateTotalAmount();
-};
+}
 
 export async function updateTotalAmount() {
   const cart = getCart();
@@ -202,7 +202,7 @@ export async function updateTotalAmount() {
     shippingAmountElement.textContent = `${shippingAmount}kr`;
   if (totalAmountElement)
     totalAmountElement.textContent = `${finalTotalPrice}kr`;
-};
+}
 
 export function updateCartCount() {
   const cart = getCart();
@@ -215,8 +215,8 @@ export function updateCartCount() {
     cartCountElement.textContent = cartCount;
     cartCountElement.classList.add("bump");
     setTimeout(() => cartCountElement.classList.remove("bump"), 300);
-  };
-};
+  }
+}
 
 export async function deleteFromCart(productId, selectedColor, selectedSize) {
   let cart = getCart();
@@ -233,7 +233,7 @@ export async function deleteFromCart(productId, selectedColor, selectedSize) {
   await saveCart(cart);
   updateCartCount();
   updateTotalAmount();
-};
+}
 
 async function updateQuantity(productId, selectedColor, selectedSize, change) {
   let cart = getCart();
@@ -259,6 +259,6 @@ async function updateQuantity(productId, selectedColor, selectedSize, change) {
     );
     if (itemElement) {
       itemElement.querySelector(".number-controls").textContent = item.quantity;
-    };
-  };
-};
+    }
+  }
+}
