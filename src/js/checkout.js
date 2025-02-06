@@ -172,6 +172,7 @@ async function loadCheckoutPage() {
   });
 
   updateTotalAmount();
+}
 
 export async function updateTotalAmount() {
   const cart = getCart();
