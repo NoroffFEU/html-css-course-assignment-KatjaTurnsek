@@ -168,10 +168,11 @@ button.buy-now {
 @media (max-width: 850px) {
   .section-checkout {
     padding: 20px;
-    display: flex;
+    align-items: stretch;
+    width: 100%; 
+    box-sizing: border-box;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
   }
 
   .cart-item {
@@ -179,6 +180,7 @@ button.buy-now {
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    width: 100%; 
   }
 
   .item-details {
@@ -187,6 +189,7 @@ button.buy-now {
     align-items: center; 
     text-align: center;
     gap: 10px;
+    width: 100%;
   }
 
   .item-info {
@@ -195,8 +198,6 @@ button.buy-now {
   }
 
   .item-details img {
-    width: 100px;
-    height: 100px;
     margin-right: 0;
   }
 
@@ -205,20 +206,14 @@ button.buy-now {
     padding: 10px 0;
   }
 
-  .summary {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 15px 0;
-  }
-
   .summary div {
-    text-align: center;
+    width: 100%;
+    padding-left: 20px;
   }
 
   .form-section {
     margin-top: 10px;
-    width: 100%; /* Ensure the section takes full width */
+    width: 100%; 
   }
 
   .form-section form {
