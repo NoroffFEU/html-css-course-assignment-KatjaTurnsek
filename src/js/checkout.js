@@ -113,14 +113,19 @@ function updateCheckoutLabels() {
 
 async function loadCheckoutPage() {
   const checkoutContainer = document.getElementById("checkout-container");
+  const checkoutDetails = document.getElementById("checkout-details");
 
-  if (!checkoutContainer) return;
+  if (!checkoutContainer || !checkoutDetails) return;
+
   let cart = getCart();
 
   if (!cart.length) {
     checkoutContainer.innerHTML = "<p>Your cart is empty.</p>";
+    checkoutDetails.style.visibility = "hidden";
     return;
   }
+
+  checkoutDetails.style.visibility = "visible";
 
   const template = document.getElementById("cart-item-template");
   checkoutContainer.innerHTML = "";
@@ -167,7 +172,6 @@ async function loadCheckoutPage() {
   });
 
   updateTotalAmount();
-}
 
 export async function updateTotalAmount() {
   const cart = getCart();
