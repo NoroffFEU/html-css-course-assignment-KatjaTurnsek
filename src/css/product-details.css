@@ -128,12 +128,12 @@
   }
 
 .section-product-details .left {
-    width: 80%;
+    width: 100%;
   }
 
-.section-product-details .right {
+/* '.section-product-details .right {
     width: 20%;
-  }
+  } */
 
 .section-product-details .right p {
     font-size: 15px;
@@ -143,17 +143,6 @@
 .product-info {
     margin-top: 40px;
     border-top: 1px solid #D1D3D4;
-  }
-
-.rating {
-    unicode-bidi: bidi-override;
-    direction: rtl;
-  }
-.rating span {
-    display: inline-block;
-    position: relative;
-    width: 19px;
-    font-size: 16px;
   }
 
     /* Form */ 
@@ -178,13 +167,19 @@
     width: auto;
     float: left;
     cursor: pointer;
-    font-size: 14px;
     padding-top: 20px;
     padding-right: 20px;
     line-height: 0;
     font-size: 16px;
     font-weight: 200;
   }
+
+.colornav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
 
 .colornav [type="radio"] {
     border: 0;
@@ -198,8 +193,12 @@
 .colornav [type="radio"] + span:before {
     content: '';
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 3vw;  /* 3% of viewport width */
+    height: 3vw; /* 3% of viewport width */
+    min-width: 15px; /* Prevents it from getting too small */
+    min-height: 15px;
+    max-width: 30px; /* Prevents it from getting too large */
+    max-height: 30px;
     vertical-align: -10px;
     border-radius: 30px;
     border: 1px solid #fff;
@@ -276,7 +275,9 @@
   }
 
 .sizesnav {
-    width: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
     border: 1px solid #D4D4D4;
     overflow: hidden;
     display: flex;
@@ -288,7 +289,9 @@
 
 .sizesnav input { display: none; }
 .sizesnav label {
-    padding: 25px 30px;
+    flex: 1;
+    text-align: center;
+    padding: 20px;
     border-right: 1px solid #D4D4D4;
     cursor: pointer;
     transition: all 0.3s;
@@ -328,6 +331,7 @@
 
       .gallery-jacket label {
         background-size: 60%;
+        height: 100px;
       }
 
       .section-product-details .text {
@@ -335,4 +339,11 @@
         padding-right: 5%;
         padding-top: 10%;
       }
+
+      .product-form label {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+
 }
