@@ -205,14 +205,14 @@ export function createProductCard({
   }
 
   return productCard;
-};
+}
 
 function createPriceSpan(className, price) {
   const span = document.createElement("span");
   span.classList.add(className);
   span.textContent = `${price}kr`;
   return span;
-};
+}
 
 export function generateProductCardContent(product, isHomepage) {
   return {
@@ -223,7 +223,7 @@ export function generateProductCardContent(product, isHomepage) {
     discountedPrice: product.discountedPrice,
     onSale: product.onSale,
   };
-};
+}
 
 export async function renderPosts(filteredProducts = products) {
   const page = document.body.getAttribute("data-page");
@@ -250,7 +250,7 @@ export async function renderPosts(filteredProducts = products) {
   } catch {
     alert("An error occurred while rendering posts. Please try again.");
   }
-};
+}
 
 export async function renderProductPage(productId) {
   const product = products.find((p) => p.id === productId);
@@ -264,7 +264,7 @@ export async function renderProductPage(productId) {
       "An error occurred while rendering the product page. Please try again."
     );
   }
-};
+}
 
 function updateProductPageContent(product) {
   document.querySelector(".product-title").textContent =
@@ -284,7 +284,7 @@ function updateProductPageContent(product) {
   `;
 
   updateSizesAndColors(product);
-};
+}
 
 function updateSizesAndColors(product) {
   const sizesNav = document.querySelector(".sizesnav");
@@ -315,7 +315,7 @@ function updateSizesAndColors(product) {
   `
     )
     .join("");
-};
+}
 
 function handleProductGallery(product) {
   const gallery = document.querySelector(".gallery-jacket");
@@ -348,7 +348,7 @@ function handleProductGallery(product) {
       );
     });
   });
-};
+}
 
 export async function filterPosts() {
   const filterValue = document
@@ -358,7 +358,7 @@ export async function filterPosts() {
     (product) => !filterValue || product.gender.toLowerCase() === filterValue
   );
   await renderPosts(filteredProducts);
-};
+}
 
 document.addEventListener("DOMContentLoaded", async () => {
   const page = document.body.getAttribute("data-page");
@@ -380,7 +380,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       cartCountElement.classList.add("bump");
       setTimeout(() => cartCountElement.classList.remove("bump"), 300);
     }
-  };
+  }
 
   async function updateTotalAmount() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -390,7 +390,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     );
     const totalAmountElement = document.getElementById("total-amount");
     if (totalAmountElement) totalAmountElement.textContent = `${totalAmount}kr`;
-  };
+  }
 
   updateCartCount();
   updateTotalAmount();
@@ -418,4 +418,4 @@ function renderFilterSection() {
   });
 
   categorySelect.addEventListener("change", filterPosts);
-};
+}
