@@ -13,7 +13,7 @@ async function getPosts() {
   } catch (error) {
     throw new Error("Failed to fetch posts: " + error.message);
   }
-}
+};
 
 // App Function
 async function app() {
@@ -26,7 +26,7 @@ async function app() {
   } finally {
     loader.hide();
   }
-}
+};
 
 app();
 
@@ -53,6 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     } else {
       console.error("Menu button or navigation links not found.");
-    }
-  }
+    };
+  };
 });
