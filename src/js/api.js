@@ -16,5 +16,5 @@ export async function fetchFromApi(url) {
     console.log(json);
   } catch (error) {
     console.log(error);
-  };
-};
+  }
+}
