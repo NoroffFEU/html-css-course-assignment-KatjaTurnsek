@@ -192,11 +192,11 @@ export async function updateTotalAmount() {
 
   if (subtotalElement)
     subtotalElement.textContent = `${totalAmount.toFixed(2)}kr`;
-  if (vatAmountElement) vatAmountElement.textContent = `VAT: ${vatAmount}kr`;
+  if (vatAmountElement) vatAmountElement.textContent = `${vatAmount}kr`;
   if (shippingAmountElement)
-    shippingAmountElement.textContent = `Shipping: ${shippingAmount}kr`;
+    shippingAmountElement.textContent = `${shippingAmount}kr`;
   if (totalAmountElement)
-    totalAmountElement.textContent = `Total: ${finalTotalPrice}kr`;
+    totalAmountElement.textContent = `${finalTotalPrice}kr`;
 }
 
 export function updateCartCount() {
