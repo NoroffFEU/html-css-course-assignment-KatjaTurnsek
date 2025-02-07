@@ -1,7 +1,7 @@
 import { products } from "./products.js";
 
 const VAT_RATE = 0.25;
-const SHIPPING_FEE = 50;
+const SHIPPING_FEE = 125;
 
 export function getCart() {
   return JSON.parse(localStorage.getItem("cart")) || [];
@@ -182,7 +182,7 @@ export async function updateTotalAmount() {
   );
 
   const vatAmount = totalAmount * VAT_RATE;
-  const shippingAmount = totalAmount > 500 ? 0 : SHIPPING_FEE;
+  const shippingAmount = totalAmount > 1900 ? 0 : SHIPPING_FEE;
 
   const finalTotalPrice = totalAmount + vatAmount + shippingAmount;
 
