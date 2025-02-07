@@ -151,7 +151,12 @@ async function loadCheckoutPage() {
     cartItem.querySelector(".discounted-price").textContent = `${price.toFixed(
       2
     )}kr`;
-    cartItem.querySelector(".regular-price").textContent = `${product.price}kr`;
+    cartItem.querySelector(".discounted-price").textContent = `${price.toFixed(
+      2
+    )}kr`;
+    cartItem.querySelector(
+      ".regular-price"
+    ).textContent = `${product.price.toFixed(2)}kr`;
 
     cartItem
       .querySelector(".decrease-quantity")
@@ -183,7 +188,6 @@ export async function updateTotalAmount() {
 
   const vatAmount = totalAmount * VAT_RATE;
   const shippingAmount = totalAmount > 1900 ? 0 : SHIPPING_FEE;
-
   const finalTotalPrice = totalAmount + vatAmount + shippingAmount;
 
   const subtotalElement = document.getElementById("subtotal");
@@ -193,11 +197,12 @@ export async function updateTotalAmount() {
 
   if (subtotalElement)
     subtotalElement.textContent = `${totalAmount.toFixed(2)}kr`;
-  if (vatAmountElement) vatAmountElement.textContent = `${vatAmount}kr`;
+  if (vatAmountElement)
+    vatAmountElement.textContent = `${vatAmount.toFixed(2)}kr`;
   if (shippingAmountElement)
-    shippingAmountElement.textContent = `${shippingAmount}kr`;
+    shippingAmountElement.textContent = `${shippingAmount.toFixed(2)}kr`;
   if (totalAmountElement)
-    totalAmountElement.textContent = `${finalTotalPrice}kr`;
+    totalAmountElement.textContent = `${finalTotalPrice.toFixed(2)}kr`;
 }
 
 export function updateCartCount() {
