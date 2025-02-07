@@ -25,7 +25,7 @@ export async function addToCart(productId, selectedColor, selectedSize) {
     return;
   }
 
-  let price = parseFloat(product.discountedPrice || product.price).toFixed(2);
+  let price = parseFloat(product.discountedPrice || product.price);
 
   let existingItem = cart.find(
     (item) =>
@@ -177,18 +177,14 @@ async function loadCheckoutPage() {
 export async function updateTotalAmount() {
   const cart = getCart();
   let totalAmount = cart.reduce(
-    (sum, item) => sum + item.price * item.quantity,
+    (sum, item) => sum + parseFloat(item.price) * item.quantity,
     0
   );
 
-  const vatAmount = (totalAmount * VAT_RATE).toFixed(2);
+  const vatAmount = totalAmount * VAT_RATE;
   const shippingAmount = totalAmount > 500 ? 0 : SHIPPING_FEE;
 
-  const finalTotalPrice = (
-    parseFloat(totalAmount) +
-    parseFloat(vatAmount) +
-    shippingAmount
-  ).toFixed(2);
+  const finalTotalPrice = totalAmount + vatAmount + shippingAmount;
 
   const subtotalElement = document.getElementById("subtotal");
   const totalAmountElement = document.getElementById("total-amount");
