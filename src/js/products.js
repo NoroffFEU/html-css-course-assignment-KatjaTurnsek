@@ -199,7 +199,7 @@ export function createProductCard({
 
     if (saleBadge) saleBadge.style.display = "block";
   } else {
-    productPriceContainer.textContent = `${price}kr`;
+    productPriceContainer.textContent = `${price.toFixed(2)}kr`;
 
     if (saleBadge) saleBadge.style.display = "none";
   }
@@ -210,7 +210,7 @@ export function createProductCard({
 function createPriceSpan(className, price) {
   const span = document.createElement("span");
   span.classList.add(className);
-  span.textContent = `${price}kr`;
+  span.textContent = `${price.toFixed(2)}kr`;
   return span;
 }
 
@@ -273,9 +273,14 @@ function updateProductPageContent(product) {
     product.description || "No Description Available";
 
   const priceElement = document.querySelector(".product-price");
+
+  const originalPrice = parseFloat(product.price) || 0;
+  const discountedPrice = parseFloat(product.discountedPrice) || 0;
+
   priceElement.innerHTML = product.discountedPrice
-    ? `<span class="old-price">${product.price}kr</span> <span class="new-price">${product.discountedPrice}kr</span>`
-    : `${product.price}kr`;
+    ? `<span class="old-price">${originalPrice.toFixed(2)}kr</span> 
+       <span class="new-price">${discountedPrice.toFixed(2)}kr</span>`
+    : `${originalPrice.toFixed(2)}kr`;
 
   const productInfo = document.querySelector(".product-info");
   productInfo.innerHTML = `
