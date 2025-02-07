@@ -1,0 +1,28 @@
+
+.section-terms {
+  padding-bottom: 4%;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.section-terms .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  width: 100%;
+}
+
+.section-terms .text {
+  padding: 0 5% 0 5%;
+}
+
+.section-terms h2 {
+  font-size: 2.6vmax;
+  color: #000000;
+  padding: 40px 0 40px 0;
+}

@@ -1,0 +1,78 @@
+
+  .ind-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    max-height: 700px;
+    overflow: hidden;
+    margin: 0 auto;
+    background-image: url("../../assets/images/rainydays-jackets.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right;
+}
+  
+.ind-container .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    text-align: left;
+    width: 100vw;
+    height: 50vh;
+    padding: 5%;
+}  
+  
+  .ind-container h1 {
+      font-size: 10vmin;
+      font-weight: 900;
+      padding: 0;
+  }
+
+  .ind-container h2 {
+      font-size: 3vmin;
+      font-style: italic;
+      font-weight: 300;
+      margin-top: 1%;
+      padding-bottom: 50px;
+  }
+
+  .var-italic {
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  .btn {
+    text-transform: uppercase;
+    font-weight: 300;
+    padding: 15px 50px;
+    background: #7BCAB2;
+    border-radius: 15px;
+    color: #000;
+    font-size: 3vmin;
+  }
+  
+  .btn:hover {
+    background: #C2ECDF;
+    text-decoration: none;
+  }
+  
+  .btn:active {
+    background: #DDF6EE;
+  }
+
+  /* Hide element on Tablet/Phone */ 
+
+@media only screen and (max-width:850px) {
+    
+.ind-container .content {
+    height: 50%;
+}  
+
+.ind-container {
+  max-height: 600px;
+}
+
+}
