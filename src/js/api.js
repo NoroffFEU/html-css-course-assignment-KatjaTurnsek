@@ -1,20 +1,37 @@
-export const API_BASE_URL = "https://api.noroff.dev/api/v1";
+export const API_BASE_URL = "https://v2.api.noroff.dev/";
 
-export async function fetchFromApi(url) {
+export async function fetchFromApi(endpoint) {
+  const errorMessage =
+    "Sorry, we couldn't load the data. Please try again later.";
+
   try {
-    const token = localStorage.getItem("accessToken");
-    const getData = {
+    const response = await fetch(`${API_BASE_URL}${endpoint}`, {
       method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    };
-    const response = await fetch(url, getData);
-    console.log(response);
-    const json = await response.json();
-    console.log(json);
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(
+        `Error: ${response.status} ${response.statusText} - ${JSON.stringify(
+          errorData.errors
+        )}`
+      );
+    }
+
+    const data = await response.json();
+    return data;
   } catch (error) {
-    console.log(error);
+    const container = document.querySelector("#productContainer");
+    if (container) {
+      container.innerHTML = `<p class="error-message">${
+        error.message.includes("NetworkError")
+          ? "Network issue detected. Please check your internet connection and try again."
+          : error.message.includes("404")
+          ? "The requested resource was not found. Please try again later."
+          : "Sorry, we couldn't load the data. Please try again later."
+      }</p>`;
+    }
+
+    return null;
   }
 }
