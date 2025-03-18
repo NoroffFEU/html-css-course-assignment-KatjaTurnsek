@@ -242,6 +242,14 @@ header {
   padding: 5%;
 }
 
+.block h2 {
+  text-align: left;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 50px;
+  padding: 20px 0 20px 0;
+}
+
 .Breadcrumbs {
   width: 100%;
   height: 35px;
