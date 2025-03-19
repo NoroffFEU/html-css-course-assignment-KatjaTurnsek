@@ -73,7 +73,7 @@ export async function fetchAndCreateProducts() {
 
         if (isHomepage) {
           const anchor = document.createElement("a");
-          anchor.href = `/product/index.html?id=${product.id}`;
+          anchor.href = `./product/index.html?id=${product.id}`;
           anchor.appendChild(card);
           container.appendChild(anchor);
         } else {
