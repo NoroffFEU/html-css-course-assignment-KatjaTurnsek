@@ -1,0 +1,75 @@
+  .section-interest {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .section-interest .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0;
+  }
+  
+  .section-interest .column {
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  
+  .section-interest .row .column img {
+    width: 100%;
+  }
+  
+  .section-interest h2 {
+    font-size: 4vmin;
+    color: #ffffff;
+    padding-bottom: 10px;
+  }
+  
+  .section-interest h3 {
+    font-size: 2.5vmin;
+    color: #ffffff;
+    padding-bottom: 40px;
+    font-weight: 300;
+  }
+  
+  .section-interest .text-wrapper {
+    position: relative;
+    overflow-x: auto;
+  }
+  
+  .section-interest .text-wrapper img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: left;
+  }
+  
+  .text-wrapper .content {
+    position: absolute;
+    inset: 0;
+    font-size: 2vmin;
+    color: #ffffff;
+    padding: 9%;
+    height: 70%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+    justify-content: center;
+    bottom: 0px;
+    top: auto;
+  }
+
+/* Hide element on Tablet/Phone */ 
+
+@media only screen and (max-width:850px) {
+    
+    .section-interest .column {
+        width: 100%;
+        flex-direction: column;
+      }
+}
