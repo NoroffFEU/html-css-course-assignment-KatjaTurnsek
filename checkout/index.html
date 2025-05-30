@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Checkout Rainy days - View what's in your Shopping Cart</title>
+  <meta name="description" content="Complete your order and get ready to step out in style, comfort, and confidence with Rainy Days Jackets!">
+  <link rel="stylesheet" href="../src/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <style>
+    body[data-page="checkout"], 
+    body[data-page="thank-you"] {
+        .menu-links, .menu-cart, .mobile-toggle-wrapper, .toggle-btn {
+            display: none;
+        }
+    }
+  </style>
+</head>
+<body data-page="checkout" class="centered">
+  
+  <header> 
+    <nav class="menu">
+      <div class="logo"><img src="../assets/images/rainydays-logo.png" alt="logotype RainyDays Jackets"></div>
+      <ul class="menu-links">
+        <li><a href="../index.html">home</a></li>
+        <li><a href="../product/index.html">shop</a></li>
+        <li><a href="../html/about-raiydays.html">about us</a></li>
+        <li><a href="../html/contact-customer-service.html">contact</a></li>
+      </ul>
+      <div class="menu-cart"><a href="index.html"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></a></div>
+      <div class="mobile-toggle-wrapper">
+      <div class="toggle-btn"><i class="fa fa-bars"></i></div>
+      </div>
+    </nav>
+  </header>
+  
+    <main>
+
+        <div class="Breadcrumbs">
+            <ul class="Breadcrumbs">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../product/index.html">Shop</a></li>
+            <li>Checkout</li>
+            </ul>
+        </div>    
+
+        <section class="block">
+          <h1>Checkout</h1>
+          <p>Complete your order and get ready to step out in style, comfort, and confidence with Rainy Days Jackets or <strong><a href="../product/index.html">continue shopping</a></strong> for more.</p>
+        </section>
+
+        <section class="section-checkout">
+          <span class="loader"></span>
+          <div id="checkout-container">
+            <p>Loading cart items...</p>
+          </div>
+        
+          <template id="cart-item-template">
+            <div class="cart-item" data-id="" data-size="">
+              <div class="item-details">
+                <img src="" alt="Product Image">
+                <div class="item-info">
+                  <strong class="product-title"></strong>
+                  <span class="product-color-size"></span>
+                  <div class="quantity-controls">
+                    <button class="decrease-quantity">-</button>
+                    <span class="number-controls">1</span>
+                    <button class="increase-quantity">+</button>
+                    <button class="remove-item"><i class="fa-solid fa-trash-can"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="price-info"></div>
+            </div>
+          </template>
+        
+          <div id="checkout-details" class="summary">
+            <div>
+              <p id="subtotal-label">Subtotal:</p>
+              <p id="shipping-label">Shipping:</p>
+              <p id="vat-label">VAT:</p>
+              <p id="total-label">Total:</p>
+            </div>
+            <div>
+              <p><span id="subtotal">0kr</span></p>
+              <p><span id="shipping-amount">0kr</span></p>
+              <p><span id="vat-amount">0kr</span></p>
+              <p><span id="total-amount">0kr</span></p>
+            </div>
+          </div>
+        </section>        
+        
+          <div id="checkout-form" class="form-section">
+            <h2>Delivery Address</h2>
+            <form action="confirmation/index.html" method="GET">
+                <label for="fullName">Full Name <span class="required">*</span></label>
+                <input type="text" id="fullName" name="fullName" required>
+        
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="streetAddress">Street Address <span class="required">*</span></label>
+                <input type="text" id="streetAddress" name="streetAddress" required>
+        
+                <label for="city">City <span class="required">*</span></label>
+                <input type="text" id="city" name="city" required>
+        
+                <label for="zipCode">Zip Code <span class="required">*</span></label>
+                <input type="text" id="zipCode" name="zipCode" required>
+        
+                <h3>Select Payment Method</h3>
+                <div class="payment-options">
+                    <label><input type="radio" name="payment" value="credit-card" checked> Credit Card</label>
+                    <label><input type="radio" name="payment" value="paypal"> PayPal</label>
+                </div>
+                <p id="form-error" style="display:none; color:red; margin-top: 1rem;"></p>
+                <button class="buy-now" type="submit">Buy Now</button>
+            </form>
+        </div>
+
+        </section>
+        
+  </main>
+
+  <footer>
+
+    <div class="section-customercare">
+      <hr class="grey">
+
+      <div class="row">
+        <div class="column">
+          <div class="wrapper">
+             <div class="images">
+              <img src="../assets/images/ico-shipping.png" alt="fast delivery truck">
+             </div>
+            <div class="text">
+            <p class="customercare-headline">Shipping</p>
+            <p>Free shipping on orders over 400 SEK.</p>
+            </div>
+          </div>
+        </div>
+
+       <div class="column">
+        <div class="wrapper">
+           <div class="images">
+            <img src="../assets/images/ico-delivery.png" alt="thumbs up">
+           </div>
+          <div class="text">
+          <p class="customercare-headline">Delivery</p>
+          <p>Orders delivered within 1-7 business days.</p>
+          </div>
+        </div>
+     </div>
+
+     <div class="column">
+      <div class="wrapper">
+         <div class="images">
+          <img src="../assets/images/ico-returns.png" alt="two arrows in a cricle">
+         </div>
+        <div class="text">
+        <p class="customercare-headline">Returns</p>
+        <p>We offer a 30-day free return policy.</p>
+        </div>
+      </div>
+    </div>
+   </div>
+
+      <hr class="grey">
+  </div>
+
+    <div class="footer-links">
+          <div class="row">
+            <div class="column">
+              <p class="footerlink-headlines">Menu</p>
+              <nav>
+                <ul class="footer-menu-links">
+                  <li><a href="../html/about-raiydays.html">About</a></li>
+                  <li><a href="../html/contact-customer-service.html">Contact</a></li>
+                  <li><a href="../html/terms.html">Terms</a></li>
+                  <li><a href="../html/privacy-policy.html">Privacy policy</a></li>
+                </ul>
+              </nav>
+            </div>
+
+          <div class="column">
+            <p class="footerlink-headlines">Accepted payment methods</p>
+            <div class="footer-cards">
+              <i title="Accepted Payments - Visa" class="fa-brands fa-cc-visa"></i>
+              <i title="Accepted Payments - Mastercard" class="fa-brands fa-cc-mastercard"></i>
+              <i title="Accepted Payments - Stripe" class="fa-brands fa-cc-stripe"></i>
+              <i title="Accepted Payments - Paypal" class="fa-brands fa-cc-paypal"></i>
+              <i title="Accepted Payments - Discover" class="fa-brands fa-cc-discover"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="footer-bottom">
+        <div class="row">
+          <div class="column">
+            <div class="wrapper">
+            <div class="images"><img src="../assets/images/rainydays-smlogowhite.png" alt="logotype RainyDays Jackets"></div>
+            <div class="text"><p>Rainydays © 2023. All Rights Reserved.</p></div>
+            </div>
+          </div>
+         </div>
+    </div>
+
+  </footer>
+
+  <script type="module" src="../src/js/index.js"></script>
+
+</body>
+</html>

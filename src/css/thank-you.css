@@ -1,0 +1,16 @@
+.text-list {
+  list-style-type: disc;
+  padding: 30px; 
+  margin: 0; 
+  line-height: 30px; 
+  text-align: left;
+}
+
+.text-list li {
+  padding: 5px 0;
+  border-bottom: 1px solid #eee; 
+}
+
+.text-list li:last-child {
+  border-bottom: none; 
+}

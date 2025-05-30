@@ -1,33 +1,54 @@
-# HTML & CSS Course Assignment
+# Rainy Days
 
-## Brief
+![Rainy Days Website Screenshot](assets/images/rainydays-website.webp)
 
-You must deliver a properly functioning, responsive website for the assignment brief you chose in Design 1.
+An e-commerce website for a fictional rain jacket store. This was created as part of my studies at Noroff - Frontend Development.
 
-The site needs to have every page listed in the site architecture on your chosen brief. Certain functionality requiring JavaScript can be mimicked; for example, a login page could link across from the ‘Sign in’ button.
+## 📍 Live Site
 
-- The HTML should be semantic and neat.
-- The CSS should follow the DRY principle and be easy to read.
-- The website should be responsive and look good at every screen size with no horizontal scrollbars. Use Flexbox and CSS Grids where appropriate. Please do not use a CSS framework like Bootstrap; we want to see that you can build responsive sites without the help of a framework.
-- The site should be WCAG compliant, and accessibility should be taken into account.
-- Each page should have a unique <meta name="description">, <title>, and <h1>.
-- You should not use copied code in your submission. All code submitted must be written by yourself. You may use external sources to show you how to achieve specific effects, which should be included in your report.
+[https://norofffeu.github.io/html-css-course-assignment-KatjaTurnsek/](https://norofffeu.github.io/html-css-course-assignment-KatjaTurnsek/)
 
-## Process
+## 💻 GitHub Repository
 
-1. Look at your prototype and consider how the elements will move across the different devices. Which elements move where on different devices?
-2. Write your HTML and CSS, ensuring your HTML is semantic and bug-free and your CSS follows DRY principles.
-3. Use media queries, flex or grid to make your website responsive across screen sizes.
-4. Test your website using your developer tools and also test on major browsers and various devices.
-5. Validate your code using the Markup Validation Service
-6. Use the WAVE Web Accessibility Evaluation Tools to test that your site matches best practices for accessibility
-7. When your site is ready, post it on the Teams peer review channel.
-8. Look at the work of your peers and write a review for them.
-9. Make adjustments based on the feedback you gather from peers and teachers.
-10. Submit here on Teams.
+[https://github.com/NoroffFEU/html-css-course-assignment-KatjaTurnsek](https://github.com/NoroffFEU/html-css-course-assignment-KatjaTurnsek)
 
-## Delivery
+## 📝 Description
 
-- Please include a link to your live site, deployed on Netlify or GitHub Pages in your submission.
-- Please include a link to your public GitHub repo containing your code in your submission.
-- There is no reflection for this CA.
+Rainy Days is an online shop that allows users to browse a collection of rain jackets, view product details, and purchase items using a shopping cart system. The site is responsive and designed to be user-friendly across devices. Product data is loaded dynamically from the Noroff API.
+
+### Key Features
+
+- Product listing and detail pages  
+- Add to cart with size selection  
+- Shopping cart with quantity control and removal  
+- "Added to cart" confirmation popup  
+- Checkout form with client-side validation  
+- Shipping cost calculation 
+- "Your cart is empty" message when appropriate  
+- Mobile responsive design  
+- LocalStorage-based persistent cart  
+
+## 🔧 Built With
+
+- HTML  
+- CSS  
+- JavaScript  
+- Noroff Rainy Days API  
+
+## 📦 Installation
+
+To run the project locally:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/NoroffFEU/html-css-course-assignment-KatjaTurnsek.git
+   ```
+2. Open `index.html` in your browser.
+
+> ⚠️ Note: Product data is fetched from Noroff's Rainy Days API (GET requests only, no API key needed).
+
+## 🙋‍♀️ Author
+
+**Katja Turnšek**  
+Frontend Development Student  
+[Portfolio Website](https://katjaturnsek.github.io/portfolio-noroff/)

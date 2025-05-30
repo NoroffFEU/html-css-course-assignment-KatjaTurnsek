@@ -1,0 +1,144 @@
+.section-products {
+    margin: 0;
+    width: 100%;
+    padding: 0 5% 5% 5%;
+}
+
+.section-products .row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; 
+    width: 100%;
+    margin: 0 auto;
+}
+
+.section-products .card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  position: relative; 
+  transition: transform 0.3s ease;
+}
+
+.section-products .card-image {
+  width: auto;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.section-products .card-content {
+  padding: 10px;
+}
+
+.section-products .card-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.section-products .card-price {
+  font-size: 16px;
+  color: #585858;
+  text-align: left;
+}
+
+.section-products a {
+    text-decoration: none;
+}
+
+.filter-container {
+  margin: 0;
+  text-align: left;
+  width: 100%; 
+}
+
+#genderFilter {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#genderFilter:focus {
+  outline: none;
+  border-color: #284A66;
+}
+
+.sale-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff4747;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.card-price-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+.sale-price {
+  color: red;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.product-description {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.size-dropdown {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.size-dropdown:focus {
+  border-color: #284A66;
+  outline: none;
+}
+
+  /* Media Queries for Smaller Screens */
+@media only screen and (max-width: 850px) {
+  .section-products .row {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+
+  .section-products .card-title {
+      font-size: 16px;
+  }
+
+  .section-products .card-price {
+      font-size: 14px;
+  }
+}
