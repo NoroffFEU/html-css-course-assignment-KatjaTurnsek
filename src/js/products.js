@@ -5,6 +5,20 @@ const isHomepage =
   document.body.id === "homepage" ||
   document.body.getAttribute("data-page") === "homepage";
 
+// Create reusable popup message
+const globalCartMessage = document.createElement("span");
+globalCartMessage.className = "cart-message";
+globalCartMessage.textContent = "Added to cart!";
+document.body.appendChild(globalCartMessage);
+
+// Function to show popup
+function showCartPopup() {
+  globalCartMessage.classList.add("show");
+  setTimeout(() => {
+    globalCartMessage.classList.remove("show");
+  }, 2000);
+}
+
 export async function fetchAndCreateProducts() {
   const errorMessage =
     "Sorry, we couldn't load the products. Please try again later.";
@@ -102,26 +116,16 @@ export async function fetchAndCreateProducts() {
           buyButton.textContent = "Buy Now";
           buyButton.dataset.id = product.id;
 
-          const cartMessage = document.createElement("span");
-          cartMessage.className = "cart-message";
-          cartMessage.textContent = "Added to cart!";
-          cartMessage.style.display = "none";
-
           buyButton.addEventListener("click", (event) => {
             const productId = event.target.dataset.id;
             const selectedSize = document.getElementById(
               `size-${productId}`
             )?.value;
             addToCart(productId, selectedSize);
-
-            cartMessage.style.display = "inline";
-            setTimeout(() => {
-              cartMessage.style.display = "none";
-            }, 2000);
+            showCartPopup();
           });
 
           content.appendChild(buyButton);
-          content.appendChild(cartMessage);
           container.appendChild(card);
         }
       });

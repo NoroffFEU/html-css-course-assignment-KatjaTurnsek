@@ -85,6 +85,26 @@ export async function loadCheckoutPage() {
 
   const cart = getCart();
 
+  if (cart.length === 0) {
+    const emptyMessage = document.createElement("div");
+    emptyMessage.textContent = "Your cart is empty. Please add items to continue.";
+    emptyMessage.className = "empty-cart-message";
+    checkoutContainer.appendChild(emptyMessage);
+
+    // Clear totals
+    const subtotalElement = document.getElementById("subtotal");
+    const vatElement = document.getElementById("vat-amount");
+    const shippingElement = document.getElementById("shipping-amount");
+    const totalElement = document.getElementById("total-amount");
+
+    if (subtotalElement) subtotalElement.textContent = "0.00kr";
+    if (vatElement) vatElement.textContent = "0.00kr";
+    if (shippingElement) shippingElement.textContent = "0.00kr";
+    if (totalElement) totalElement.textContent = "0.00kr";
+
+    return;
+  }
+
   cart.forEach((item) => {
     const template = cartItemTemplate.content.cloneNode(true);
     const cartItem = template.querySelector(".cart-item");
@@ -180,7 +200,12 @@ export async function updateTotalAmount() {
   );
 
   const vatAmount = totalAmount * VAT_RATE;
-  const shippingAmount = totalAmount > 1900 ? 0 : SHIPPING_FEE;
+
+  let shippingAmount = 0;
+  if (cart.length > 0) {
+    shippingAmount = totalAmount > 1900 ? 0 : SHIPPING_FEE;
+  }
+
   const finalTotalPrice = totalAmount + vatAmount + shippingAmount;
 
   subtotalElement.textContent = `${totalAmount.toFixed(2)}kr`;
@@ -195,4 +220,46 @@ const page = document.body.getAttribute("data-page");
 if (page === "checkout") {
   loadCheckoutPage();
   updateTotalAmount();
+
+  // Form validation section
+  const form = document.getElementById("checkout-form");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      const name = form.querySelector("#fullName");
+      const email = form.querySelector("#email");
+      const address = form.querySelector("#streetAddress");
+      const errorMessage = document.getElementById("form-error");
+    
+      let valid = true;
+      let errors = [];
+    
+      if (!name || name.value.trim() === "") {
+        valid = false;
+        errors.push("Name cannot be empty.");
+      }
+    
+      if (
+        !email ||
+        !/^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/.test(email.value.trim())
+      ) {
+        valid = false;
+        errors.push("Please enter a valid email address.");
+      }
+    
+      if (!address || address.value.trim() === "") {
+        valid = false;
+        errors.push("Address cannot be empty.");
+      }
+    
+      if (!valid) {
+        e.preventDefault();
+        if (errorMessage) {
+          errorMessage.innerHTML = errors.join("<br>");
+          errorMessage.style.display = "block";
+        } else {
+          alert(errors.join("\n"));
+        }
+      }
+    });    
+  }
 }
